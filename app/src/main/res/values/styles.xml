@@ -1,0 +1,61 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="AppTheme.Base">
+    </style>
+
+    <style name="AppTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:colorPrimary">@color/colorPrimary</item>
+        <item name="android:colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:colorAccent">@color/colorAccent</item>
+        <item name="android:textColorPrimary">@color/white</item>
+    </style>
+
+    <style name = "MyStyleForLayouts" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="MyMarginStyle" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_marginBottom">@dimen/activity_vertical_margin</item>
+        <item name="android:layout_marginTop">@dimen/activity_vertical_margin</item>
+    </style>
+
+    <style name="MyViewStyle" parent="MyMarginStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/line_height</item>
+        <item name="android:background">@color/grey</item>
+    </style>
+
+    <style name="MyStyleForTextView" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/size_text</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="MyStyleForTextViewRight" parent="MyStyleForTextView">
+        <item name="android:layout_alignParentRight">true</item>
+    </style>
+
+    <style name="MyStyleForTextViewLeft" parent="MyStyleForTextView">
+        <item name="android:textColor">@color/grey</item>
+    </style>
+
+    <style name="MyStyleForTextViewTop" parent="MyStyleForTextView">
+        <item name="android:layout_marginBottom">@dimen/activity_vertical_margin</item>
+        <item name="android:layout_marginTop">@dimen/activity_vertical_margin</item>
+        <item name="android:textSize">@dimen/size_big_text</item>
+    </style>
+
+    <style name="MyStyleForCustomTextView" parent="MyStyleForTextViewLeft">
+        <item name="android:background">@drawable/custom_background</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:paddingBottom">@dimen/padding_bottom_top</item>
+        <item name="android:paddingTop">@dimen/padding_bottom_top</item>
+        <item name="android:paddingLeft">@dimen/padding_left_right</item>
+        <item name="android:paddingRight">@dimen/padding_left_right</item>
+    </style>
+
+
+</resources>

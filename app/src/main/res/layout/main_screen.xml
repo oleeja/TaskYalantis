@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        style="@style/MyStyleForLayouts"
+        android:id="@+id/scrollView">
+
+        <LinearLayout
+            android:orientation="vertical"
+            style="@style/MyStyleForLayouts"
+            android:focusableInTouchMode="true"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin">
+
+
+            <TextView
+                style="@style/MyStyleForTextViewTop"
+                android:text="New text"
+                android:id="@+id/textViewEconomy" />
+
+            <TextView
+                style="@style/MyStyleForCustomTextView"
+                android:text="New text"
+                android:id="@+id/textViewInWork" />
+            <View
+                style="@style/MyViewStyle" />
+
+            <RelativeLayout
+                style="@style/MyStyleForLayouts">
+
+                <TextView
+                    style="@style/MyStyleForTextViewLeft"
+                    android:text="@string/created"
+                    android:id="@+id/textViewCreated" />
+
+                <TextView
+                    style="@style/MyStyleForTextViewRight"
+                    android:text="New text"
+                    android:id="@+id/textViewCreatedDate"/>
+            </RelativeLayout>
+
+            <View
+                style="@style/MyViewStyle"/>
+
+            <RelativeLayout
+                style="@style/MyStyleForLayouts">
+
+                <TextView
+                    style="@style/MyStyleForTextViewLeft"
+                    android:text="@string/registered"
+                    android:id="@+id/textViewRegistered" />
+
+                <TextView
+                    style="@style/MyStyleForTextViewRight"
+                    android:text="New text"
+                    android:id="@+id/textViewRegisteredDate" />
+            </RelativeLayout>
+
+            <View
+                style="@style/MyViewStyle"/>
+
+            <RelativeLayout
+                style="@style/MyStyleForLayouts">
+
+                <TextView
+                    style="@style/MyStyleForTextViewLeft"
+                    android:text="@string/decision"
+                    android:id="@+id/textViewDecision" />
+
+                <TextView
+                    style="@style/MyStyleForTextViewRight"
+                    android:text="New text"
+                    android:id="@+id/textViewDecisionDate" />
+            </RelativeLayout>
+
+            <View
+                style="@style/MyViewStyle"/>
+
+            <RelativeLayout
+                style="@style/MyStyleForLayouts">
+
+                <TextView
+                    style="@style/MyStyleForTextViewLeft"
+                    android:text="@string/responsible"
+                    android:id="@+id/textViewResponsible" />
+
+                <TextView
+                    style="@style/MyStyleForTextViewRight"
+                    android:text="New text"
+                    android:id="@+id/textViewResponsibleName" />
+            </RelativeLayout>
+
+            <View
+                style="@style/MyViewStyle"/>
+
+            <TextView
+                style="@style/MyStyleForTextView"
+                android:text="New text"
+                android:id="@+id/textViewDescription" />
+
+            <android.support.v7.widget.RecyclerView
+                style="@style/MyMarginStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/recycler_height"
+                android:layout_marginRight="@dimen/recycler_negative_margin"
+                android:id="@+id/recyclerView">
+            </android.support.v7.widget.RecyclerView>
+
+        </LinearLayout>
+    </ScrollView>
