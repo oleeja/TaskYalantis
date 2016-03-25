@@ -11,17 +11,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements OnItemRecyclerViewListener {
+public class MainActivity extends AppCompatActivity {
     private Toolbar mToolbar;
     private TextView mEconomy, mInWork, mCreatedDate, mRegisteredDate, mDecisionDate,
             mResponsibleName, mDescription;
     private TextView mCreated, mRegistered, mDecision, mResponsible;
     private RecyclerView mRecyclerView;
 
-    private ArrayList<Uri> mImageUri;
+    private List<Uri> mImageUri;
 
-    private String mControlsName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,9 +61,11 @@ public class MainActivity extends AppCompatActivity implements OnItemRecyclerVie
     }
 
     private void setValues(){
-        mImageUri.add(Uri.parse("http://i.imgur.com/8SihmuM.jpg"));
-        mImageUri.add(Uri.parse("http://i.imgur.com/W1SkL5G.jpg"));
-        mImageUri.add(Uri.parse("http://i.imgur.com/Zb7vTJm.jpg"));
+
+        String [] photoLink = getResources().getStringArray(R.array.link_photo);
+        for (String  i: photoLink){
+            mImageUri.add(Uri.parse(i));
+        }
 
         mEconomy.setText(R.string.economy_name);
         mInWork.setText(R.string.in_work_name);
@@ -76,35 +78,17 @@ public class MainActivity extends AppCompatActivity implements OnItemRecyclerVie
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(MainActivity.this,
                 LinearLayoutManager.HORIZONTAL, false);
         mRecyclerView.setLayoutManager(linearLayoutManager);
-        MyAdapter adapter = new MyAdapter(mImageUri, this, this);
+        AdapterForRecyclerView adapter = new AdapterForRecyclerView(mImageUri, this);
         mRecyclerView.setAdapter(adapter);
     }
 
     private void addListeners(){
 
-
         View.OnClickListener onClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                switch (v.getId()){
-                    case R.id.textViewEconomy:
-                    case R.id.textViewInWork:
-                    case R.id.textViewCreated:
-                    case R.id.textViewCreatedDate:
-                    case R.id.textViewRegistered:
-                    case R.id.textViewRegisteredDate:
-                    case R.id.textViewDecision:
-                    case R.id.textViewDecisionDate:
-                    case R.id.textViewResponsible:
-                    case R.id.textViewResponsibleName:
-                    case R.id.textViewDescription:
-                        mControlsName = "TextView";
-                        break;
-                    case R.id.toolbar:
-                        mControlsName = "Toolbar";
-                        break;
-                }
-                Toast.makeText(MainActivity.this, mControlsName,Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, v.getClass().getSimpleName(),Toast.LENGTH_SHORT)
+                        .show();
             }
         };
 
@@ -123,11 +107,5 @@ public class MainActivity extends AppCompatActivity implements OnItemRecyclerVie
         mToolbar.setOnClickListener(onClickListener);
 
         mRecyclerView.setOnClickListener(onClickListener);
-    }
-
-    @Override
-    public void onImageViewClick() {
-        mControlsName = "ImageView";
-        Toast.makeText(MainActivity.this, mControlsName, Toast.LENGTH_SHORT).show();
     }
 }

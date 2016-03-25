@@ -15,5 +15,11 @@
     <string name="responsible_name">Дніпропетровський МВК ()</string>
     <string name="description_name">Погані дороги, по вулицям Попова, Хорольська, пров. Хорольський
         в селищі Діївка(178 км)</string>
+    
+    <string-array name="link_photo">
+        <item>http://i.imgur.com/8SihmuM.jpg</item>
+        <item>http://i.imgur.com/W1SkL5G.jpg</item>
+        <item>http://i.imgur.com/Zb7vTJm.jpg</item>
+    </string-array>
 
 </resources>

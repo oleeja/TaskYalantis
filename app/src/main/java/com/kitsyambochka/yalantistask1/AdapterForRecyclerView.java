@@ -7,28 +7,26 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-
+import android.widget.Toast;
 import com.squareup.picasso.Picasso;
-
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Developer on 16.03.2016.
+ *
  */
-public class MyAdapter extends RecyclerView.Adapter {
+public class AdapterForRecyclerView extends RecyclerView.Adapter {
 
-    private ArrayList<Uri> mImageUri;
+    private List<Uri> mImageUri;
     private Context mContext;
-    private OnItemRecyclerViewListener mImageListener;
 
-    public MyAdapter(ArrayList<Uri> imageUri, Context context, OnItemRecyclerViewListener mImageListener) {
+    public AdapterForRecyclerView(List<Uri> imageUri, Context context) {
         this.mImageUri = imageUri;
         this.mContext = context;
-        this.mImageListener = mImageListener;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        ImageView mImageView;
+        private ImageView mImageView;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -43,16 +41,14 @@ public class MyAdapter extends RecyclerView.Adapter {
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
+    public void onBindViewHolder(final RecyclerView.ViewHolder holder, final int position) {
         Picasso.with(mContext).load(mImageUri.get(position)).error(R.drawable.no_image)
                 .into(((ViewHolder) holder).mImageView);
 
         ((ViewHolder) holder).mImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mImageListener != null) {
-                    mImageListener.onImageViewClick();
-                }
+                Toast.makeText(mContext, v.getClass().getSimpleName(),Toast.LENGTH_SHORT).show();
             }
         });
     }
