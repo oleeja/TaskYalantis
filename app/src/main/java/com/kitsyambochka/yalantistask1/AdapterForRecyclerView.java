@@ -14,6 +14,7 @@ import java.util.List;
 /**
  * Created by Developer on 16.03.2016.
  *
+ *
  */
 public class AdapterForRecyclerView extends RecyclerView.Adapter {
 
