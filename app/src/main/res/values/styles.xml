@@ -57,5 +57,5 @@
         <item name="android:paddingRight">@dimen/padding_left_right</item>
     </style>
 
-
+    <!-- [Comment] Don't use relativity attributes in styles.xml -->
 </resources>

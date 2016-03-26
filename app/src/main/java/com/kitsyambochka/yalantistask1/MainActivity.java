@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//[Comment] Back button image is wrong
 public class MainActivity extends AppCompatActivity {
     private Toolbar mToolbar;
     private TextView mEconomy, mInWork, mCreatedDate, mRegisteredDate, mDecisionDate,
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(mToolbar);
 
         mToolbar.setNavigationIcon(R.drawable.ic_arrow_white);
-        mEconomy = (TextView)findViewById(R.id.textViewEconomy);
+        mEconomy = (TextView)findViewById(R.id.textViewEconomy); //[Comment] Suggestion. Use Butterknife library and refactor this.
         mInWork = (TextView)findViewById(R.id.textViewInWork);
         mCreatedDate = (TextView)findViewById(R.id.textViewCreatedDate);
         mRegisteredDate = (TextView)findViewById(R.id.textViewRegisteredDate);
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setValues(){
 
-        String [] photoLink = getResources().getStringArray(R.array.link_photo);
+        String [] photoLink = getResources().getStringArray(R.array.link_photo); //[Comment] You don't need this. Picasso can show image by string link
         for (String  i: photoLink){
             mImageUri.add(Uri.parse(i));
         }
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
         mResponsibleName.setText(R.string.responsible_name);
         mDescription.setText(R.string.description_name);
 
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(MainActivity.this,
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(MainActivity.this, //[Comment] Unnecessary MainActivity
                 LinearLayoutManager.HORIZONTAL, false);
         mRecyclerView.setLayoutManager(linearLayoutManager);
         AdapterForRecyclerView adapter = new AdapterForRecyclerView(mImageUri, this);
