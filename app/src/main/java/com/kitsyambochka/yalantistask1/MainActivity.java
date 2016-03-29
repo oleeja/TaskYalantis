@@ -13,12 +13,25 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 public class MainActivity extends AppCompatActivity {
-    private Toolbar mToolbar;
-    private TextView mEconomy, mInWork, mCreatedDate, mRegisteredDate, mDecisionDate,
-            mResponsibleName, mDescription;
-    private TextView mCreated, mRegistered, mDecision, mResponsible;
-    private RecyclerView mRecyclerView;
+
+    @Bind(R.id.toolbar) Toolbar mToolbar;
+    @Bind(R.id.textViewEconomy) TextView mEconomy;
+    @Bind(R.id.textViewInWork) TextView mInWork;
+    @Bind(R.id.textViewCreatedDate) TextView mCreatedDate;
+    @Bind(R.id.textViewRegisteredDate) TextView mRegisteredDate;
+    @Bind(R.id.textViewDecisionDate) TextView mDecisionDate;
+    @Bind(R.id.textViewResponsibleName) TextView mResponsibleName;
+    @Bind(R.id.textViewDescription) TextView mDescription;
+    @Bind(R.id.textViewCreated) TextView mCreated;
+    @Bind(R.id.textViewRegistered) TextView mRegistered;
+    @Bind(R.id.textViewDecision) TextView mDecision;
+    @Bind(R.id.textViewResponsible) TextView mResponsible;
+    @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
 
     private List<Uri> mImageUri;
 
@@ -26,24 +39,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        ButterKnife.bind(this);
+
         setSupportActionBar(mToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        mToolbar.setNavigationIcon(R.drawable.ic_arrow_white);
-        mEconomy = (TextView)findViewById(R.id.textViewEconomy);
-        mInWork = (TextView)findViewById(R.id.textViewInWork);
-        mCreatedDate = (TextView)findViewById(R.id.textViewCreatedDate);
-        mRegisteredDate = (TextView)findViewById(R.id.textViewRegisteredDate);
-        mDecisionDate = (TextView)findViewById(R.id.textViewDecisionDate);
-        mResponsibleName = (TextView)findViewById(R.id.textViewResponsibleName);
-        mDescription = (TextView)findViewById(R.id.textViewDescription);
-        mCreated = (TextView)findViewById(R.id.textViewCreated);
-        mRegistered = (TextView)findViewById(R.id.textViewRegistered);
-        mDecision = (TextView)findViewById(R.id.textViewDecision);
-        mResponsible = (TextView)findViewById(R.id.textViewResponsible);
-
-        mRecyclerView = (RecyclerView)findViewById(R.id.recyclerView);
-
+        mImageUri = new ArrayList<>();
 
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,8 +54,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        mImageUri = new ArrayList<>();
-
         setValues();
 
         addListeners();
@@ -61,8 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setValues(){
 
-        String [] photoLink = getResources().getStringArray(R.array.link_photo);
-        for (String  i: photoLink){
+        for (String  i: getResources().getStringArray(R.array.link_photo)){
             mImageUri.add(Uri.parse(i));
         }
 
@@ -74,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         mResponsibleName.setText(R.string.responsible_name);
         mDescription.setText(R.string.description_name);
 
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(MainActivity.this,
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,
                 LinearLayoutManager.HORIZONTAL, false);
         mRecyclerView.setLayoutManager(linearLayoutManager);
         AdapterForRecyclerView adapter = new AdapterForRecyclerView(mImageUri, this);

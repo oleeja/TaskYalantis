@@ -22,8 +22,8 @@ public class AdapterForRecyclerView extends RecyclerView.Adapter {
     private Context mContext;
 
     public AdapterForRecyclerView(List<Uri> imageUri, Context context) {
-        this.mImageUri = imageUri;
-        this.mContext = context;
+        mImageUri = imageUri;
+        mContext = context;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{

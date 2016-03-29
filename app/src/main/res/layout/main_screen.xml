@@ -13,16 +13,23 @@
 
 
             <TextView
-                style="@style/MyStyleForTextViewTop"
-                android:text="New text"
+                style="@style/MyStyleForTextView"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:textSize="@dimen/size_big_text"
                 android:id="@+id/textViewEconomy" />
 
             <TextView
                 style="@style/MyStyleForCustomTextView"
-                android:text="New text"
+                android:paddingBottom="@dimen/padding_bottom_top"
+                android:paddingTop="@dimen/padding_bottom_top"
+                android:paddingLeft="@dimen/padding_left_right"
+                android:paddingRight="@dimen/padding_left_right"
                 android:id="@+id/textViewInWork" />
             <View
-                style="@style/MyViewStyle" />
+                style="@style/MyViewStyle"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"/>
 
             <RelativeLayout
                 style="@style/MyStyleForLayouts">
@@ -33,13 +40,15 @@
                     android:id="@+id/textViewCreated" />
 
                 <TextView
-                    style="@style/MyStyleForTextViewRight"
-                    android:text="New text"
+                    style="@style/MyStyleForTextView"
+                    android:layout_alignParentRight="true"
                     android:id="@+id/textViewCreatedDate"/>
             </RelativeLayout>
 
             <View
-                style="@style/MyViewStyle"/>
+                style="@style/MyViewStyle"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"/>
 
             <RelativeLayout
                 style="@style/MyStyleForLayouts">
@@ -50,13 +59,15 @@
                     android:id="@+id/textViewRegistered" />
 
                 <TextView
-                    style="@style/MyStyleForTextViewRight"
-                    android:text="New text"
+                    style="@style/MyStyleForTextView"
+                    android:layout_alignParentRight="true"
                     android:id="@+id/textViewRegisteredDate" />
             </RelativeLayout>
 
             <View
-                style="@style/MyViewStyle"/>
+                style="@style/MyViewStyle"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"/>
 
             <RelativeLayout
                 style="@style/MyStyleForLayouts">
@@ -67,13 +78,15 @@
                     android:id="@+id/textViewDecision" />
 
                 <TextView
-                    style="@style/MyStyleForTextViewRight"
-                    android:text="New text"
+                    style="@style/MyStyleForTextView"
+                    android:layout_alignParentRight="true"
                     android:id="@+id/textViewDecisionDate" />
             </RelativeLayout>
 
             <View
-                style="@style/MyViewStyle"/>
+                style="@style/MyViewStyle"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"/>
 
             <RelativeLayout
                 style="@style/MyStyleForLayouts">
@@ -84,21 +97,23 @@
                     android:id="@+id/textViewResponsible" />
 
                 <TextView
-                    style="@style/MyStyleForTextViewRight"
-                    android:text="New text"
+                    style="@style/MyStyleForTextView"
+                    android:layout_alignParentRight="true"
                     android:id="@+id/textViewResponsibleName" />
             </RelativeLayout>
 
             <View
-                style="@style/MyViewStyle"/>
+                style="@style/MyViewStyle"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"/>
 
             <TextView
                 style="@style/MyStyleForTextView"
-                android:text="New text"
                 android:id="@+id/textViewDescription" />
 
             <android.support.v7.widget.RecyclerView
-                style="@style/MyMarginStyle"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/recycler_height"
                 android:layout_marginRight="@dimen/recycler_negative_margin"
