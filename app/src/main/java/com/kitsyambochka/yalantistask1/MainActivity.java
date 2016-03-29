@@ -107,3 +107,4 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.setOnClickListener(onClickListener);
     }
 }
+
